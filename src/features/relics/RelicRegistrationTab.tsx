@@ -295,9 +295,7 @@ export default function RelicRegistrationTab({
           {innateRelics.map((relic) => (
             <li key={relic.id}>
               <div>
-                <strong>
-                  {RELIC_TIER_LABELS[relic.type]} / {RELIC_COLOR_LABELS[relic.color]}
-                </strong>
+                <strong>{relic.id}</strong>
                 <p style={{ whiteSpace: "pre-line" }}>{formatEffectList(relic.positiveEffectIds)}</p>
                 {relic.type === "deep" && (
                   <>

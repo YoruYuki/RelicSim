@@ -168,8 +168,8 @@ export default function App(): JSX.Element {
         outputName: selectedLoadout.name
       });
 
-      downloadJson(JSON.stringify(payload, null, 2), "damage-calc");
-      window.alert(`ダメ計算機フォーマットを出力しました: ${selectedLoadout.name}`);
+      downloadJson(JSON.stringify(payload, null, 2), selectedLoadout.name);
+      // window.alert(`ダメ計算機フォーマットを出力しました: ${selectedLoadout.name}`);
       setIsDamageExportModalOpen(false);
     } catch (error) {
       const message = error instanceof Error ? error.message : "ダメ計算機フォーマットの出力に失敗しました。";

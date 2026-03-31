@@ -176,6 +176,34 @@ describe("LoadoutTab filtering", () => {
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
+  it("grays slots and shows hint when clicking a slot without selecting a loadout", async () => {
+    const user = userEvent.setup();
+    const preset = CONTAINER_PRESETS.find((entry) => entry.characterId === "ch-1");
+    expect(preset).toBeDefined();
+    if (!preset) return;
+
+    const loadout: Loadout = {
+      id: "loadout-hint",
+      name: "hint test",
+      characterId: "ch-1",
+      presetId: preset.id,
+      assignments: Object.fromEntries(preset.slots.map((slot) => [slot.id, null])),
+      createdAt: now,
+      updatedAt: now
+    };
+
+    render(<LoadoutTab inventory={createInventory()} loadouts={[loadout]} onLoadoutsChange={vi.fn()} />);
+
+    const targetSlot = screen.getByTestId(`slot-${preset.slots[0].id}`);
+    expect(targetSlot).toHaveClass("slot-button-disabled");
+    const layoutPanel = screen.getByText("配置").closest(".panel-layout");
+    expect(layoutPanel).toHaveClass("panel-layout-disabled");
+
+    await user.click(targetSlot);
+    expect(screen.getByRole("status")).toHaveTextContent("ビルドを先に選択してください。");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  });
+
   it("supports realtime search, keyword filter and sort", async () => {
     const user = userEvent.setup();
     const preset = CONTAINER_PRESETS.find(

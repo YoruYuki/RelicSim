@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { CHARACTERS, SLOT_COLOR_LABELS, getEffectLabel, getPresetsForCharacter } from "../../data/gameData";
 import { createId } from "../../domain/ids";
 import { getSelectableRelics } from "../../domain/rules";
@@ -63,6 +63,8 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeKeywordKeys, setActiveKeywordKeys] = useState<string[]>([]);
   const [sortMode, setSortMode] = useState<PickerSortMode>("recent");
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!characterPresets.some((preset) => preset.id === selectedPresetId)) {
@@ -174,6 +176,8 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
     return sorted;
   }, [activeKeywordLabels, searchQuery, selectableRelics, sortMode]);
 
+  const isLoadoutSelected = selectedLoadout !== null;
+
   useEffect(() => {
     if (!isPickerOpen) {
       return;
@@ -197,6 +201,26 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
     setActiveKeywordKeys([]);
     setSortMode("recent");
   }, [isPickerOpen, activeSlotId]);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current !== null) {
+        clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    if (toastTimerRef.current !== null) {
+      clearTimeout(toastTimerRef.current);
+    }
+
+    toastTimerRef.current = setTimeout(() => {
+      setToastMessage(null);
+      toastTimerRef.current = null;
+    }, 2200);
+  };
 
   const updateLoadout = (updater: (loadout: Loadout) => Loadout) => {
     if (!selectedLoadout) {
@@ -285,10 +309,13 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
   };
 
   const handleSlotClick = (slotId: string) => {
-    setActiveSlotId(slotId);
-    if (selectedLoadout) {
-      setIsPickerOpen(true);
+    if (!selectedLoadout) {
+      showToast("ビルドを先に選択してください。");
+      return;
     }
+
+    setActiveSlotId(slotId);
+    setIsPickerOpen(true);
   };
 
   const toggleKeyword = (keywordKey: string) => {
@@ -393,7 +420,7 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
         )}
       </div>
 
-      <div className="panel panel-layout">
+      <div className={`panel panel-layout ${!isLoadoutSelected ? "panel-layout-disabled" : ""}`}>
         <h2>配置</h2>
         {!selectedPreset && <p className="muted">プリセットを選択してください。</p>}
         {selectedPreset && (
@@ -408,7 +435,7 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
                     key={slot.id}
                     type="button"
                     data-testid={`slot-${slot.id}`}
-                    className={`slot-button slot-tier-${slot.tier} slot-color-${slot.color} ${isActive ? "active" : ""}`}
+                    className={`slot-button slot-tier-${slot.tier} slot-color-${slot.color} ${isActive ? "active" : ""} ${!isLoadoutSelected ? "slot-button-disabled" : ""}`}
                     onClick={() => handleSlotClick(slot.id)}
                   >
                     <strong>{getSlotHeader(slot)}</strong>
@@ -525,6 +552,12 @@ export default function LoadoutTab({ inventory, loadouts, onLoadoutsChange }: Lo
               ))}
             </ul>
           </div>
+        </div>
+      )}
+
+      {toastMessage && (
+        <div className="toast" role="status" aria-live="polite">
+          {toastMessage}
         </div>
       )}
     </section>

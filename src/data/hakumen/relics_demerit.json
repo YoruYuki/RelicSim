@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","relics":[{"id":"relic_demerit_001","label":"HP最大未満時、攻撃力低下","effects":[{"type":"damage_mul_all","multiplier":0.9,"conditional":true,"is_demerit":true,"stackable":true}],"note":"[!]すべてのダメージを減少","stackable":true}]}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "meta": {
+    "name": "輝石のつぶて_0331_2353",
+    "character_id": "wylder",
+    "level": 15,
+    "created_at": "2026-03-31T23:53:01.794727",
+    "updated_at": "2026-03-31T23:53:01.795023"
+  },
+  "relics": {
+    "normal": [
+      "relic_normal_001",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "deep": [
+      "relic_deep_001",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "demerit": [
+      "relic_demerit_001",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "buffs": {
+    "attached": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "talisman": [
+      null,
+      null
+    ],
+    "passive": []
+  },
+  "boss_id": null,
+  "skill_cat": "sorcery",
+  "skill_entry": "輝石のつぶて",
+  "snapshot": {
+    "char": "wylder",
+    "boss": null,
+    "cat": "sorcery",
+    "entry": "輝石のつぶて",
+    "variant": "Glintstone Pebble",
+    "catalyst": null,
+    "rarity": "common",
+    "rel_n": [
+      "relic_normal_001"
+    ],
+    "rel_d": [
+      "relic_deep_001"
+    ],
+    "rel_dm": [
+      "relic_demerit_001"
+    ],
+    "att": [],
+    "tal": [],
+    "pas": []
+  }
+}

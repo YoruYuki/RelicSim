@@ -97,6 +97,69 @@ function normalizeLabel(label: string): string {
   return label.replace(/\s+/g, "").trim();
 }
 
+const WEAPON_CLASS_KEYWORDS = [
+  "短剣",
+  "直剣",
+  "大剣",
+  "特大剣",
+  "刺剣",
+  "重刺剣",
+  "曲剣",
+  "大曲剣",
+  "刀",
+  "両刃剣",
+  "斧",
+  "大斧",
+  "槌",
+  "フレイル",
+  "大槌",
+  "特大武器",
+  "槍",
+  "大槍",
+  "斧槍",
+  "鎌",
+  "鞭",
+  "拳",
+  "爪"
+] as const;
+
+const STATUS_KEYWORDS = ["毒", "腐敗", "凍傷"] as const;
+
+function replaceAllKeywords(label: string, keywords: readonly string[]): string {
+  return keywords.reduce((current, keyword) => current.split(keyword).join("○○"), label);
+}
+
+function containsAnyKeyword(label: string, keywords: readonly string[]): boolean {
+  return keywords.some((keyword) => label.includes(keyword));
+}
+
+function ensurePlusZeroSuffix(label: string): string {
+  const trimmed = label.trim();
+  return trimmed.endsWith("+0") ? trimmed : `${trimmed}+0`;
+}
+
+function buildLookupCandidates(label: string): string[] {
+  const candidates: string[] = [label, ensurePlusZeroSuffix(label)];
+  let transformed = label;
+  let transformedByKeyword = false;
+
+  if (containsAnyKeyword(transformed, WEAPON_CLASS_KEYWORDS)) {
+    transformed = replaceAllKeywords(transformed, WEAPON_CLASS_KEYWORDS);
+    transformedByKeyword = true;
+  }
+
+  if (containsAnyKeyword(transformed, STATUS_KEYWORDS)) {
+    transformed = replaceAllKeywords(transformed, STATUS_KEYWORDS);
+    candidates.push(transformed);
+    candidates.push(ensurePlusZeroSuffix(transformed));
+    transformedByKeyword = true;
+  } else if (transformedByKeyword) {
+    candidates.push(transformed);
+  }
+
+  return [...new Set(candidates.map((candidate) => normalizeLabel(candidate)))];
+}
+
 export function buildLabelIndex(entries: CatalogEntry[]): Map<string, string> {
   const index = new Map<string, string>();
   entries.forEach((entry) => {
@@ -106,14 +169,15 @@ export function buildLabelIndex(entries: CatalogEntry[]): Map<string, string> {
 }
 
 export function findEffectIdByLabel(label: string, labelIndex: Map<string, string>): string | null {
-  const normalized = normalizeLabel(label);
-  const exactMatch = labelIndex.get(normalized);
-  if (exactMatch) {
-    return exactMatch;
+  const candidates = buildLookupCandidates(label);
+  for (const candidate of candidates) {
+    const matched = labelIndex.get(candidate);
+    if (matched) {
+      return matched;
+    }
   }
 
-  const plusZeroMatch = labelIndex.get(normalizeLabel(`${label}+0`));
-  return plusZeroMatch ?? null;
+  return null;
 }
 
 const normalCatalog = normalCatalogJson as CatalogFile;

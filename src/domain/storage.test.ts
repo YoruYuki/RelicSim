@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { INNATE_RELICS } from "../data/innateRelics";
 import { importFromJson } from "./storage";
 import type { AppState, ExportedData } from "./types";
 
@@ -86,6 +87,7 @@ describe("importFromJson merge", () => {
   });
 
   it("keeps innate relic assignment references even if innate relics are not in imported inventory", () => {
+    const innateRelicId = INNATE_RELICS[0]?.id ?? "innate-relic";
     const localState: AppState = {
       version: 1,
       inventory: [],
@@ -107,7 +109,7 @@ describe("importFromJson merge", () => {
             characterId: "ch-1",
             presetId: "preset-ch-1-a",
             assignments: {
-              "slot-1": "innate-normal-red-1"
+              "slot-1": innateRelicId
             },
             createdAt: now,
             updatedAt: now
@@ -120,6 +122,6 @@ describe("importFromJson merge", () => {
     const importedLoadout = merged.loadouts.find((loadout) => loadout.id === "loadout-innate");
 
     expect(importedLoadout).toBeDefined();
-    expect(importedLoadout?.assignments["slot-1"]).toBe("innate-normal-red-1");
+    expect(importedLoadout?.assignments["slot-1"]).toBe(innateRelicId);
   });
 });

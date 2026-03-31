@@ -14,6 +14,27 @@ describe("damageExport label matching", () => {
     expect(findEffectIdByLabel("攻撃力上昇", index)).toBe("a");
     expect(findEffectIdByLabel("存在しない", index)).toBeNull();
   });
+
+  it("applies weapon class keyword fallback to ○○", () => {
+    const index = buildLabelIndex([{ id: "weapon", label: "○○の攻撃力上昇" }]);
+    expect(findEffectIdByLabel("短剣の攻撃力上昇", index)).toBe("weapon");
+    expect(findEffectIdByLabel("爪の攻撃力上昇", index)).toBe("weapon");
+  });
+
+  it("applies status keyword fallback to ○○ before +0 fallback", () => {
+    const index = buildLabelIndex([
+      { id: "status-plain", label: "○○状態の敵に対する攻撃を強化" },
+      { id: "status-plus", label: "○○状態の敵に対する攻撃を強化+0" }
+    ]);
+    expect(findEffectIdByLabel("毒状態の敵に対する攻撃を強化", index)).toBe("status-plain");
+    expect(findEffectIdByLabel("腐敗状態の敵に対する攻撃を強化", index)).toBe("status-plain");
+    expect(findEffectIdByLabel("凍傷状態の敵に対する攻撃を強化", index)).toBe("status-plain");
+  });
+
+  it("falls back to status +0 when plain status label is missing", () => {
+    const index = buildLabelIndex([{ id: "status-plus", label: "○○状態の敵に対する攻撃を強化+0" }]);
+    expect(findEffectIdByLabel("毒状態の敵に対する攻撃を強化", index)).toBe("status-plus");
+  });
 });
 
 describe("buildDamageCalculatorExport", () => {

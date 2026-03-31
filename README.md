@@ -1,21 +1,5 @@
 # ナイトレイン 遺物シミュレーター
 
-GitHub Pages で動作する、遺物登録と配置シミュレーション用の Web アプリです。
-
-## 開発
-
-```bash
-npm install
-npm run dev
-```
-
-## テスト / ビルド
-
-```bash
-npm run test
-npm run build
-```
-
 ## 機能
 
 - 遺物登録タブ
@@ -31,15 +15,4 @@ npm run build
   - localStorage 自動保存
   - JSON エクスポート/インポート（毎回 上書き/マージを選択）
   - マージ時の ID 競合は新 ID を採番して重複保持
-- 将来拡張
-  - `src/domain/optimizer.ts` に自動最適化インターフェースを定義済み
-
-## データについて
-
-現在のキャラクター・容器・効果データは `src/data/gameData.ts` のサンプル固定データです。  
-正式データに差し替える場合は同ファイルの定数を更新してください。
-
-## GitHub Pages デプロイ
-
-- `main` ブランチへ push すると `.github/workflows/deploy.yml` で自動デプロイします。
-- リポジトリ側の Settings -> Pages で GitHub Actions を有効化してください。
+- 白面さんのダメージ計算機対応

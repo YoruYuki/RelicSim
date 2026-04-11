@@ -441,6 +441,396 @@ export const INNATE_RELICS: Relic[] = [
     negativeEffectIds: [null, null, null],
     createdAt: INNATE_TIMESTAMP,
     updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_199","norm_138","norm_038"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d03","norm_004","norm_007"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d04","norm_019","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_200","norm_077","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d05","norm_013","norm_016"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_d06","norm_007","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_211","norm_052","norm_070"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d09","norm_004","norm_013"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d10","norm_007","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_363","norm_031","norm_037"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d15","norm_004","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_d16","norm_019","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_205","norm_127","norm_072"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_d07","norm_004","norm_013"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_d08","norm_016","norm_025"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_213","norm_309","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d11","norm_007","norm_019"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_d12","norm_004","norm_025"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_218","norm_195","norm_169"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d13","norm_004","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_d14","norm_013","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_223","norm_110","norm_077"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d17","norm_004","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_d18","norm_016","norm_025"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_228","norm_186","norm_186"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_d19","norm_004","norm_007"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_d20","norm_010","norm_016"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_231","norm_112","norm_075"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d21","norm_004","norm_016"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_d22","norm_007","norm_022"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_109","norm_099","norm_004"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_054","norm_049","norm_028"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_055","norm_118","norm_010"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_060","norm_188","norm_187"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_169","norm_169","norm_169"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な燃える景色",
+    type: "normal",
+    color: "red",
+    positiveEffectIds: ["norm_113","norm_195","norm_186"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な滴る景色",
+    type: "normal",
+    color: "blue",
+    positiveEffectIds: ["norm_d01","norm_d02","norm_031"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な輝く景色",
+    type: "normal",
+    color: "yellow",
+    positiveEffectIds: ["norm_076","norm_075","norm_072"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
+},
+
+{
+    id: "壮大な静まる景色",
+    type: "normal",
+    color: "green",
+    positiveEffectIds: ["norm_058","norm_100","norm_032"],
+    negativeEffectIds: [null, null, null],
+    createdAt: INNATE_TIMESTAMP,
+    updatedAt: INNATE_TIMESTAMP
 }
 ];
 
